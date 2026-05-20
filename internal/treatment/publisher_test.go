@@ -12,7 +12,7 @@ func TestEntryIDSlugStable(t *testing.T) {
 		title    string
 		expected string
 	}{
-		{"Excessive JSON wrapping in MiMo V2.5", "excessive-json-wrapping-in-mimo-v25"},
+		{"Excessive JSON wrapping in MiMo V2.5", "excessive-json-wrapping-in-mimo-v2-5"},
 		{"Reasoning  leak / output", "reasoning-leak-output"},
 		{"   leading & trailing   ", "leading-trailing"},
 	}
