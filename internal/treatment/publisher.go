@@ -109,3 +109,53 @@ func (p *Publisher) Run(ctx context.Context) error {
 	}
 	return nil
 }
+
+// AtlasEntry is the published, training-ready schema entry.
+type AtlasEntry struct {
+	Title        string
+	Category     string
+	BeforePrompt string
+	AfterPrompt  string
+	TokenDelta   int
+}
+
+// ValidateEntry checks the minimum schema before publishing.
+func ValidateEntry(e *AtlasEntry) error {
+	if e.Title == "" {
+		return errFieldRequired("title")
+	}
+	if e.Category == "" {
+		return errFieldRequired("category")
+	}
+	return nil
+}
+
+func slugify(s string) string {
+	out := []rune{}
+	last := '-'
+	for _, r := range s {
+		if (r >= 'a' && r <= 'z') || (r >= '0' && r <= '9') {
+			out = append(out, r)
+			last = r
+		} else if r >= 'A' && r <= 'Z' {
+			out = append(out, r+32)
+			last = r + 32
+		} else if last != '-' {
+			out = append(out, '-')
+			last = '-'
+		}
+	}
+	res := string(out)
+	for len(res) > 0 && res[0] == '-' {
+		res = res[1:]
+	}
+	for len(res) > 0 && res[len(res)-1] == '-' {
+		res = res[:len(res)-1]
+	}
+	return res
+}
+
+type fieldError string
+
+func (e fieldError) Error() string { return string(e) + " is required" }
+func errFieldRequired(f string) error { return fieldError(f) }
