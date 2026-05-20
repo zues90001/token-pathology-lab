@@ -9,4 +9,5 @@ bin/
 *.log
 data/
 atlas/*/
+!atlas/*/*.json
 !atlas/.gitkeep

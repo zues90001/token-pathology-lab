@@ -1,0 +1,15 @@
+{
+  "id": "json-wrapping-redundancy-001",
+  "category": "json-wrapping-redundancy",
+  "title": "Schema repetition before strict-JSON output",
+  "before_prompt": "Return a JSON object with fields {name, age, email}.\nThink step-by-step.",
+  "after_prompt": "Output strict JSON only. Schema: {name, age, email}. No prose, no schema repetition.",
+  "before_token_usage": { "input": 28, "reasoning": 312, "output": 64, "total": 404 },
+  "after_token_usage":  { "input": 33, "reasoning": 12,  "output": 64, "total": 109 },
+  "token_delta": -295,
+  "savings_pct": 0.73,
+  "model": "MiMo V2.5",
+  "validation_runs": 50,
+  "license": "CC0-1.0",
+  "notes": "73% reduction in total tokens with identical correctness on 50/50 outputs."
+}

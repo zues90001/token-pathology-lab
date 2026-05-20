@@ -1,0 +1,15 @@
+{
+  "id": "excessive-self-reflection-001",
+  "category": "excessive-self-reflection",
+  "title": "Meta-narration suppression on factual lookup",
+  "before_prompt": "What year did Mount Tambora erupt? Think step-by-step.",
+  "after_prompt": "What year did Mount Tambora erupt? Answer in one line. No reasoning narration.",
+  "before_token_usage": { "input": 14, "reasoning": 188, "output": 22, "total": 224 },
+  "after_token_usage":  { "input": 16, "reasoning": 8,   "output": 12, "total": 36  },
+  "token_delta": -188,
+  "savings_pct": 0.84,
+  "model": "MiMo V2.5",
+  "validation_runs": 50,
+  "license": "CC0-1.0",
+  "notes": "Factual lookup answer correctness 50/50 in both before/after; reasoning tokens dropped 95%."
+}
