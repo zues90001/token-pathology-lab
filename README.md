@@ -1,5 +1,13 @@
 # MiMo Token Pathology Lab
 
+[![ci](https://github.com/zues90001/token-pathology-lab/actions/workflows/ci.yml/badge.svg)](https://github.com/zues90001/token-pathology-lab/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Status](https://img.shields.io/badge/status-alpha-orange)
+![MiMo](https://img.shields.io/badge/MiMo-multi--agent-blue)
+![Go](https://img.shields.io/badge/go-1.22%2B-00add8)
+[![Dataset](https://img.shields.io/badge/dataset-CC0-lightgrey)](PRIVACY.md)
+
+
 > Bridge user complaints → controlled lab experiments → open dataset that
 > MiMo team can ship as training data. Diagnose where the token waste comes
 > from, prove the root cause, and publish the fix.
