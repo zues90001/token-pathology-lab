@@ -1,0 +1,12 @@
+build/
+bin/
+*.sqlite
+*.sqlite-*
+.env
+.env.*
+.idea/
+.vscode/
+*.log
+data/
+atlas/*/
+!atlas/.gitkeep

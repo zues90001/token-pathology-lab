@@ -1,0 +1,37 @@
+{
+  "task_class": "json_classification_short",
+  "domain": "code",
+  "atlas_version": "2026-05-19",
+  "baseline": {
+    "depth_pct": 100,
+    "avg_total_tokens": 22500,
+    "avg_reasoning_tokens": 18000
+  },
+  "min_viable": {
+    "depth_pct": 25,
+    "avg_total_tokens": 7700,
+    "avg_reasoning_tokens": 4500
+  },
+  "savings_per_call_tokens": 14800,
+  "savings_pct": 65.8,
+  "remediation_prompt_prefix": "Answer concisely without intermediate analysis. Skip the rationale unless explicitly asked.",
+  "model_training_hint": "When the user prompt contains a strict short-form output schema (single label, boolean, ranked list of < 5 items), the model should bias toward depth-pct ≤ 25.",
+  "diagnostic": {
+    "samples_real": 1450,
+    "complaint_correlation": 0.81,
+    "tenants_observed": 4
+  },
+  "lab": {
+    "samples": 200,
+    "quality_curve": {
+      "10": 0.62,
+      "25": 0.95,
+      "50": 0.96,
+      "75": 0.96,
+      "100": 0.97
+    },
+    "failure_mode_below_threshold": "At 10% depth the model omits 1 of 3 required JSON fields; common loss is the 'confidence' field."
+  },
+  "ecosystem_savings_estimate_per_month": "60M tokens",
+  "license": "CC0-1.0"
+}
